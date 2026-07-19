@@ -1,10 +1,10 @@
-import chainlit as cl
-from langchain_core.messages import HumanMessage, AIMessage
 import os
+import chainlit as cl
+from typing import Dict, Optional
+from langgraph_app import my_graph
 from chainlit.types import ThreadDict
 from chainlit.data.sql_alchemy import SQLAlchemyDataLayer
-
-from langgraph_app import my_graph
+from langchain_core.messages import HumanMessage, AIMessage
 
 from dotenv import load_dotenv
 load_dotenv(override=True)
@@ -16,7 +16,6 @@ load_dotenv(override=True)
 async def on_chat_start():
     cl.user_session.set("state", {"messages": []})
     await cl.Message("👋 Hello! AI Assistant ready.").send()
-
 
 #OnMessage
 @cl.on_message
@@ -82,6 +81,15 @@ async def on_message(msg: cl.Message):
             state["messages"].append(AIMessage(content=final_text))
             cl.user_session.set("state", state)
 
+
+@cl.oauth_callback
+def oauth_callback(
+    provider_id: str,
+    token: str,
+    raw_user_data: Dict[str, str],
+    default_user: cl.User,
+) -> Optional[cl.User]:
+    return default_user
 
 # Authentication
 @cl.password_auth_callback
