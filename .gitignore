@@ -1,0 +1,6 @@
+# Environment variables
+.env
+
+# Google OAuth files
+credentials.json
+token.json
