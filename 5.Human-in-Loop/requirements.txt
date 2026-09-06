@@ -1,0 +1,22 @@
+# UI + web
+chainlit
+fastapi
+
+# Agent graph
+langgraph
+langchain-core
+langchain-openai
+
+# Tools
+langchain-community
+langchain-ollama
+langchain-tavily
+langchain-google-community[gmail,calendar]
+faiss-cpu
+
+# Chat history data layer (Postgres)
+sqlalchemy
+asyncpg
+greenlet
+
+python-dotenv
