@@ -1,0 +1,499 @@
+{
+  "baseline": {
+    "precision@3": 0.5,
+    "recall@3": 0.85,
+    "hit@3": 1.0,
+    "mrr": 1.0,
+    "ndcg@3": 0.8839,
+    "config": "vector",
+    "k": 3
+  },
+  "baseline_per_question": [
+    {
+      "id": "q01",
+      "kind": "single",
+      "question": "When did the Space Age begin and what event marked it?",
+      "ground_truth": [
+        0,
+        55
+      ],
+      "retrieved": [
+        0,
+        55,
+        3
+      ],
+      "precision@3": 0.6666666666666666,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q02",
+      "kind": "single",
+      "question": "How long did Yuri Gagarin's orbit of the Earth take?",
+      "ground_truth": [
+        6
+      ],
+      "retrieved": [
+        6,
+        9,
+        10
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q03",
+      "kind": "single",
+      "question": "At what altitude and speed does the ISS orbit?",
+      "ground_truth": [
+        20
+      ],
+      "retrieved": [
+        20,
+        21,
+        19
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q04",
+      "kind": "single",
+      "question": "When was the James Webb Space Telescope launched?",
+      "ground_truth": [
+        40,
+        57
+      ],
+      "retrieved": [
+        40,
+        38,
+        56
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 0.5,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 0.6131471927654584
+    },
+    {
+      "id": "q05",
+      "kind": "single",
+      "question": "What is the record for the longest single spaceflight?",
+      "ground_truth": [
+        9
+      ],
+      "retrieved": [
+        9,
+        6,
+        55
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q06",
+      "kind": "multi_chunk",
+      "question": "Who were the first man and the first woman to fly in space?",
+      "ground_truth": [
+        6,
+        7,
+        55
+      ],
+      "retrieved": [
+        7,
+        55,
+        6
+      ],
+      "precision@3": 1.0,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q07",
+      "kind": "multi_chunk",
+      "question": "What happened on the lunar surface during Apollo 11?",
+      "ground_truth": [
+        14,
+        15
+      ],
+      "retrieved": [
+        14,
+        16,
+        12
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 0.5,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 0.6131471927654584
+    },
+    {
+      "id": "q08",
+      "kind": "multi_chunk",
+      "question": "Which theorists laid the groundwork for rocketry before Sputnik?",
+      "ground_truth": [
+        1,
+        2
+      ],
+      "retrieved": [
+        1,
+        2,
+        4
+      ],
+      "precision@3": 0.6666666666666666,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q09",
+      "kind": "multi_chunk",
+      "question": "What are the objectives of Artemis 1, 2 and 3?",
+      "ground_truth": [
+        34,
+        35
+      ],
+      "retrieved": [
+        35,
+        34,
+        33
+      ],
+      "precision@3": 0.6666666666666666,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q10",
+      "kind": "multi_chunk",
+      "question": "How does the human body change in space and what do astronauts do about it?",
+      "ground_truth": [
+        43,
+        44
+      ],
+      "retrieved": [
+        43,
+        42,
+        46
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 0.5,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 0.6131471927654584
+    }
+  ],
+  "recall_curve": {
+    "recall@3": 0.85,
+    "recall@5": 0.9,
+    "recall@10": 0.95,
+    "recall@15": 1.0,
+    "recall@20": 1.0
+  },
+  "recall_per_question": [
+    {
+      "id": "q01",
+      "kind": "single",
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q02",
+      "kind": "single",
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q03",
+      "kind": "single",
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q04",
+      "kind": "single",
+      "recall@3": 0.5,
+      "recall@5": 0.5,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q05",
+      "kind": "single",
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q06",
+      "kind": "multi_chunk",
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q07",
+      "kind": "multi_chunk",
+      "recall@3": 0.5,
+      "recall@5": 0.5,
+      "recall@10": 0.5,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q08",
+      "kind": "multi_chunk",
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q09",
+      "kind": "multi_chunk",
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    },
+    {
+      "id": "q10",
+      "kind": "multi_chunk",
+      "recall@3": 0.5,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "recall@15": 1.0,
+      "recall@20": 1.0
+    }
+  ],
+  "rerank": {
+    "precision@3": 0.5,
+    "recall@3": 0.85,
+    "hit@3": 1.0,
+    "mrr": 1.0,
+    "ndcg@3": 0.8839,
+    "config": "rerank",
+    "k": 3
+  },
+  "rerank_per_question": [
+    {
+      "id": "q01",
+      "kind": "single",
+      "question": "When did the Space Age begin and what event marked it?",
+      "ground_truth": [
+        0,
+        55
+      ],
+      "retrieved": [
+        0,
+        55,
+        6
+      ],
+      "precision@3": 0.6666666666666666,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q02",
+      "kind": "single",
+      "question": "How long did Yuri Gagarin's orbit of the Earth take?",
+      "ground_truth": [
+        6
+      ],
+      "retrieved": [
+        6,
+        55,
+        15
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q03",
+      "kind": "single",
+      "question": "At what altitude and speed does the ISS orbit?",
+      "ground_truth": [
+        20
+      ],
+      "retrieved": [
+        20,
+        19,
+        21
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q04",
+      "kind": "single",
+      "question": "When was the James Webb Space Telescope launched?",
+      "ground_truth": [
+        40,
+        57
+      ],
+      "retrieved": [
+        40,
+        38,
+        10
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 0.5,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 0.6131471927654584
+    },
+    {
+      "id": "q05",
+      "kind": "single",
+      "question": "What is the record for the longest single spaceflight?",
+      "ground_truth": [
+        9
+      ],
+      "retrieved": [
+        9,
+        6,
+        20
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q06",
+      "kind": "multi_chunk",
+      "question": "Who were the first man and the first woman to fly in space?",
+      "ground_truth": [
+        6,
+        7,
+        55
+      ],
+      "retrieved": [
+        7,
+        55,
+        6
+      ],
+      "precision@3": 1.0,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q07",
+      "kind": "multi_chunk",
+      "question": "What happened on the lunar surface during Apollo 11?",
+      "ground_truth": [
+        14,
+        15
+      ],
+      "retrieved": [
+        14,
+        16,
+        55
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 0.5,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 0.6131471927654584
+    },
+    {
+      "id": "q08",
+      "kind": "multi_chunk",
+      "question": "Which theorists laid the groundwork for rocketry before Sputnik?",
+      "ground_truth": [
+        1,
+        2
+      ],
+      "retrieved": [
+        1,
+        2,
+        0
+      ],
+      "precision@3": 0.6666666666666666,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q09",
+      "kind": "multi_chunk",
+      "question": "What are the objectives of Artemis 1, 2 and 3?",
+      "ground_truth": [
+        34,
+        35
+      ],
+      "retrieved": [
+        35,
+        34,
+        36
+      ],
+      "precision@3": 0.6666666666666666,
+      "recall@3": 1.0,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 1.0
+    },
+    {
+      "id": "q10",
+      "kind": "multi_chunk",
+      "question": "How does the human body change in space and what do astronauts do about it?",
+      "ground_truth": [
+        43,
+        44
+      ],
+      "retrieved": [
+        43,
+        46,
+        42
+      ],
+      "precision@3": 0.3333333333333333,
+      "recall@3": 0.5,
+      "hit@3": 1,
+      "mrr": 1.0,
+      "ndcg@3": 0.6131471927654584
+    }
+  ]
+}

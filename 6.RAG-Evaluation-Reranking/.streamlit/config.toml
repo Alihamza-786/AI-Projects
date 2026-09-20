@@ -1,0 +1,81 @@
+# Theme for dashboard.py
+#
+# Bright, single-mode light theme. Everything visual lives here rather than in
+# CSS inside the app: native theming applies to every widget consistently and
+# does not break when Streamlit changes its internal class names.
+#
+# Only [theme] is defined (no [theme.dark]), which locks the app to this one
+# light mode regardless of the viewer's OS setting.
+
+[theme]
+base = "light"
+
+# --- Surfaces and ink ------------------------------------------------------
+# White is the main surface, the tinted grey is one step down for widgets,
+# metric cards and dataframe headers. Secondary must stay darker than main.
+primaryColor = "#256abf"              # buttons, focus rings, progress bars
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f4f6fb"
+textColor = "#111827"                 # 17.7:1 on white
+borderColor = "#e4e8f2"
+linkColor = "#256abf"                 # 5.4:1 on white
+linkUnderline = false
+
+codeBackgroundColor = "#f4f6fb"
+codeTextColor = "#1c5cab"
+
+dataframeBorderColor = "#e4e8f2"
+dataframeHeaderBackgroundColor = "#f4f6fb"
+
+# --- Shape -----------------------------------------------------------------
+baseRadius = "10px"
+buttonRadius = "8px"
+showWidgetBorder = true
+showSidebarBorder = true
+
+# --- Typography ------------------------------------------------------------
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+headingFont = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap"
+codeFont = "'JetBrains Mono':https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+
+baseFontSize = 15
+baseFontWeight = 400
+codeFontSize = "0.875rem"
+headingFontSizes = ["34px", "24px", "19px", "16px", "14px", "12px"]
+headingFontWeights = [700, 600, 600, 600, 600, 600]
+
+metricValueFontSize = "32px"
+metricValueFontWeight = 700
+
+# --- Charts ----------------------------------------------------------------
+# Validated categorical palette: every adjacent pair clears the colour-vision
+# separation floor on a white surface, and the first three slots clear it for
+# every pair. Slots are assigned in order, so on the metrics chart:
+#   1 recall (blue)  ·  2 precision (orange)  ·  3 ceiling (aqua)
+# Three of these sit below 3:1 against white on their own, which the chart's
+# legend and the per-question table below it relieve.
+chartCategoricalColors = [
+  "#2a78d6",  # blue
+  "#eb6834",  # orange
+  "#1baf7a",  # aqua
+  "#eda100",  # yellow
+  "#e87ba4",  # magenta
+  "#008300",  # green
+  "#4a3aa7",  # violet
+  "#e34948",  # red
+]
+
+chartSequentialColors = [
+  "#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#5598e7",
+  "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#0d366b",
+]
+
+# --- Semantic colours ------------------------------------------------------
+# Same hues as the chart palette so badges and status text stay in family.
+blueColor = "#256abf"
+orangeColor = "#c4501f"
+yellowColor = "#a87400"
+greenColor = "#0f7a55"
+redColor = "#c93332"
+violetColor = "#4a3aa7"
+grayColor = "#5b6478"
