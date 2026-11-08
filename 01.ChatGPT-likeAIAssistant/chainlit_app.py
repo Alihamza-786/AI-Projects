@@ -1,41 +1,12 @@
-import chainlit as cl
-from langchain_ollama import ChatOllama
-from langgraph.graph.message import add_messages
-from typing import Annotated, Sequence, TypedDict
-from langgraph.graph import StateGraph, START, END
-from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
-
 import os
+import chainlit as cl
+from langgraph_app import graph
 from chainlit.types import ThreadDict
 from chainlit.data.sql_alchemy import SQLAlchemyDataLayer
+from langchain_core.messages import HumanMessage, AIMessage
 
 from dotenv import load_dotenv
 load_dotenv(override=True)
-
-
-#LLM
-llm = ChatOllama(
-    model="qwen2.5",
-    temperature=0.5,
-)
-
-#Agent State
-class AgentState(TypedDict):
-    messages: Annotated[Sequence[BaseMessage], add_messages]
-
-#Node
-async def assistant(state: AgentState):
-    response = await llm.ainvoke(state["messages"])
-    return {"messages": [response]}
-
-#Graph Builder
-graph_builder = StateGraph(AgentState)
-graph_builder.add_node("assistant", assistant)
-graph_builder.add_edge(START, "assistant")
-graph_builder.add_edge("assistant", END)
-
-graph = graph_builder.compile()
-
 
 #Chainlit
 #ChatStart
@@ -50,28 +21,34 @@ async def on_message(msg: cl.Message):
 
     state = cl.user_session.get("state")
     state["messages"].append(HumanMessage(content=msg.content))
-
+    state["messages"] = state["messages"][-10:]
+    print("\n\nSTATE: ", state)
+    print("\nLENGTH:", len(state['messages']))
     msg_out = cl.Message(content="")
     await msg_out.send()
 
     final_text = ""
-    async for chunk in graph.astream(
-        {"messages": state["messages"]},
-        stream_mode="messages",
-        version = 'v2'
-    ):
-        message_chunk, metadata = chunk['data']
+    try: 
+        async for chunk in graph.astream(
+            {"messages": state["messages"]},
+            stream_mode="messages",
+            version = 'v2'
+        ):
+            message_chunk, metadata = chunk['data']
 
-        if message_chunk.content:
-            final_text += message_chunk.content
-            await msg_out.stream_token(message_chunk.content)
+            if message_chunk.content:
+                final_text += message_chunk.content
+                await msg_out.stream_token(message_chunk.content)
 
-    msg_out.content = final_text
-    await msg_out.update()
+    except Exception as e:
+        print("Stopped:", e)
+    finally:
+        if final_text: 
+            msg_out.content = final_text
+            await msg_out.update()
 
-    state["messages"].append(AIMessage(content=final_text))
-    cl.user_session.set("state", state)
-    # print("\n\n STATE: ", state, "\n")
+            state["messages"].append(AIMessage(content=final_text))
+            cl.user_session.set("state", state)
 
 # Authentication
 @cl.password_auth_callback
@@ -114,7 +91,7 @@ async def on_chat_resume(thread: ThreadDict):
             elif step_type == "assistant_message":
                 messages.append(AIMessage(content=content))
         cl.user_session.set("state", {"messages": messages})
-        print("\n\nMESSAGES: ", messages)
+        print("\n\nMESSAGES LOADED: ", len(messages))
     except Exception as e:
     
         print(f"\nError resuming chat: {e}")
